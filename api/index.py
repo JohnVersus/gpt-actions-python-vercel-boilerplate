@@ -1,10 +1,7 @@
-from http.server import BaseHTTPRequestHandler
+from fastapi import FastAPI
 
+app = FastAPI()
 
-class handler(BaseHTTPRequestHandler):
-    def do_GET(self):
-        self.send_response(200)
-        self.send_header("Content-type", "text/plain")
-        self.end_headers()
-        self.wfile.write("Hello, GPT!".encode("utf-8"))
-        return
+@app.get("/api/python")
+def hello_world():
+    return {"message": "Hello World"}

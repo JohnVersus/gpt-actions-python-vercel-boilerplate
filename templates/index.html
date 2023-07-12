@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>{{ title }}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <style>
+      body {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+        background-color: #1c1c1c;
+        color: #0dd984;
+        font-family: "Gill Sans Extrabold", sans-serif;
+        font-weight: bolder;
+        text-align: center;
+      }
+      h1 {
+        font-size: 2.5vw;
+      }
+      h2 {
+        font-size: 1.5vw;
+      }
+      a {
+        color: #d9de41;
+        text-decoration: underline;
+      }
+      a:hover {
+        color: #ddd;
+      }
+      @media only screen and (max-width: 600px) {
+        h1 {
+          font-size: 5vw;
+        }
+        h2 {
+          font-size: 3.5vw;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <h1>{{ message }}</h1>
+    <h2>
+      You can access API documentation at the <a href="/docs">/docs</a> page.
+    </h2>
+  </body>
+</html>

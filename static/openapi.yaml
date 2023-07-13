@@ -1,0 +1,98 @@
+openapi: 3.0.0
+info:
+  title: Book Collection
+  description: A simple plugin to add books to an open collection of books.
+  version: 1.0.0
+paths:
+  /book:
+    get:
+      summary: Get all books
+      operationId: get_books
+      responses:
+        "200":
+          description: A list of books
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  data:
+                    type: object
+                    additionalProperties:
+                      $ref: "#/components/schemas/Book"
+    post:
+      summary: Add a book
+      operationId: add_book
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/Book"
+      responses:
+        "200":
+          description: The ID of the added book
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                  book_id:
+                    type: string
+  /book/{id}:
+    get:
+      summary: Get a book by ID
+      operationId: get_book
+      parameters:
+        - in: path
+          name: id
+          schema:
+            type: string
+          required: true
+      responses:
+        "200":
+          description: The details of the book
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  data:
+                    $ref: "#/components/schemas/Book"
+    delete:
+      summary: Delete a book by ID
+      operationId: delete_book
+      parameters:
+        - in: path
+          name: id
+          schema:
+            type: string
+          required: true
+      responses:
+        "200":
+          description: A message confirming the deletion
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+components:
+  schemas:
+    Book:
+      type: object
+      properties:
+        title:
+          type: string
+        author:
+          type: string
+        description:
+          type: string
+        publication_year:
+          type: integer
+      required:
+        - title
+        - author

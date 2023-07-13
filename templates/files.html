@@ -1,31 +1,27 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>{{ title }}</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Static Files</title>
     <style>
       body {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
         height: 100vh;
         margin: 0;
         background-color: #1c1c1c;
         color: #0dd984;
         font-family: "Gill Sans Extrabold", sans-serif;
         font-weight: bolder;
-        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
       }
       h1 {
         font-size: 2.5vw;
       }
-      h2 {
-        font-size: 1.5vw;
-      }
       a {
         color: #d9de41;
         text-decoration: underline;
+        font-size: 1.5vw;
       }
       a:hover {
         color: #ddd;
@@ -34,21 +30,21 @@
         h1 {
           font-size: 5vw;
         }
-        h2 {
+        a {
           font-size: 3.5vw;
         }
       }
     </style>
   </head>
   <body>
-    <h1>{{ message }}</h1>
-    <h2>
-      You can access Plugin API documentation at the
-      <a href="/docs">docs</a> page.
-    </h2>
-    <h2>
-      You can access Plugin files at the
-      <a href="/static">files</a> page.
-    </h2>
+    <h1>Static Files</h1>
+    {% for file in files %}
+    <div>
+      <a href="/static/{{file}}">{{file}}</a>
+    </div>
+    {% endfor %}
+    <div>
+      <a href="/">🏠</a>
+    </div>
   </body>
 </html>

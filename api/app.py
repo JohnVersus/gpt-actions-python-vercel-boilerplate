@@ -1,4 +1,4 @@
-from fastapi import APIRouter, Body
+from fastapi import APIRouter, Body, HTTPException
 from api.model import BookSchema
 
 router = APIRouter()
@@ -20,6 +20,16 @@ async def get_book(id: str) -> dict:
 
 @router.post("/")
 def add_book(book: BookSchema = Body(...)) -> dict:
+    if len(books) >= 100:
+        raise HTTPException(status_code=400, detail="Maximum number of books reached.")
     book_id = str(len(books) + 1)
     books[book_id] = book.dict()
     return {"message": f"Book {book_id} added successfully", "book_id": book_id}
+
+
+@router.delete("/{id}")
+def delete_book(id: str) -> dict:
+    if id not in books:
+        raise HTTPException(status_code=400, detail="Invalid book ID")
+    del books[id]
+    return {"message": f"Book {id} deleted successfully"}

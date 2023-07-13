@@ -9,7 +9,7 @@ class BookSchema(BaseModel):
     publication_year: Optional[int] = None
 
     class Config:
-        schema_extra = {
+        json_schema_extra = {
             "example": {
                 "title": "Inferno",
                 "author": "Dan Brown",

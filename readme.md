@@ -12,7 +12,7 @@ Before you begin, ensure you know how to work with the following:
 
 ## Developing Locally
 
-1. Clone this repository:
+1. Clone this repository using the below git commands or you can clone the git template directly from github.
 
 ```bash
 git clone https://github.com/JohnVersus/chatgpt-plugin-python-vercel-boilerplate.git your_project_name
@@ -20,7 +20,7 @@ git clone https://github.com/JohnVersus/chatgpt-plugin-python-vercel-boilerplate
 cd your_project_name
 ```
 
-2. Create an venv and install the required dependencies:
+2. Create a venv and install the required dependencies:
 
 ```bash
 python3 -m venv venv

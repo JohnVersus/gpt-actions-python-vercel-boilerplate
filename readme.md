@@ -70,8 +70,10 @@ Once installed, you can start using the API endpoints from ChatGPT.
 
 ## Working Demo
 
-![Demo Image 1](https://github.com/JohnVersus/chatgpt-plugin-python-vercel-boilerplate/assets/15834299/cdee56e5-1f22-453c-9c99-36f1674268d2)
-![Demo Image 2](https://github.com/JohnVersus/chatgpt-plugin-python-vercel-boilerplate/assets/15834299/8f83e41c-337b-4b15-8f57-0a93d3ad524f)
+<img width="700" alt="image" src="https://github.com/JohnVersus/chatgpt-plugin-python-vercel-boilerplate/assets/15834299/7a2e43f8-0c98-409f-99a0-24491756a0fc">
+
+<img width="700" alt="image" src="https://github.com/JohnVersus/chatgpt-plugin-python-vercel-boilerplate/assets/15834299/b64bdc08-94d6-40ff-9713-a1349e15a843">
+
 
 ## Useful Resources:
 

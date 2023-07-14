@@ -2,6 +2,9 @@
 
 This repository contains a boilerplate for creating a [ChatGPT](https://platform.openai.com/docs/plugins/introduction) Plugin API using FastAPI.
 
+If you find this repository useful, please consider giving it a star! 🌟
+
+
 ## Prerequisites
 
 Before you begin, ensure you know how to work with the following:

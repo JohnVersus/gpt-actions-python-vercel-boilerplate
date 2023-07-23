@@ -26,10 +26,10 @@ async def read_root(request: Request):
 
 
 app.include_router(BookRouter, prefix="/book")
-app.include_router(StaticRouter, prefix="/static")
-app.mount("/static", StaticFiles(directory="static"), name="static")
+app.include_router(StaticRouter, prefix="/static", include_in_schema=False )
+app.mount("/static", StaticFiles(directory="static"), name="static" )
 
 
-@app.get("/.well-known/ai-plugin.json")
+@app.get("/.well-known/ai-plugin.json", include_in_schema=False )
 async def serve_plugin_info():
     return FileResponse("static/ai-plugin.json")

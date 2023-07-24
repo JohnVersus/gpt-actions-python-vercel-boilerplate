@@ -9,7 +9,7 @@
   },
   "api": {
     "type": "openapi",
-    "url": "https://chatgpt-plugin-python-vercel-boilerplate.vercel.app/static/openapi.yaml"
+    "url": "https://chatgpt-plugin-python-vercel-boilerplate.vercel.app/openapi.json"
   },
   "logo_url": "https://chatgpt-plugin-python-vercel-boilerplate.vercel.app/static/logo.png",
   "contact_email": "admin@johnversus.dev",

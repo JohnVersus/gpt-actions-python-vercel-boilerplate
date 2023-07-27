@@ -4,7 +4,6 @@ This repository contains a boilerplate for creating a [ChatGPT](https://platform
 
 If you find this repository useful, please consider giving it a star! 🌟
 
-
 ## Prerequisites
 
 Before you begin, ensure you know how to work with the following:
@@ -51,9 +50,7 @@ You should now be able to visit `http://localhost:8000` to see your API in actio
 
 4. You can using this json to generate yaml code. You can use any only line generators or use ChatGPT for the convertions.
 
-5. Paste the generated yaml in `static/openapi.yaml` file.
-
-6. Finally update the `static/ai-plugin.json` and other files present under the `static` folder to your need.
+5. Finally update the `api/generate_plugin_json.py` and other files present under the `static` folder to your need.
 
 ## Testing the Plugin API Locally
 
@@ -76,7 +73,6 @@ Once installed, you can start using the API endpoints from ChatGPT.
 <img width="700" alt="image" src="https://github.com/JohnVersus/chatgpt-plugin-python-vercel-boilerplate/assets/15834299/7a2e43f8-0c98-409f-99a0-24491756a0fc">
 
 <img width="700" alt="image" src="https://github.com/JohnVersus/chatgpt-plugin-python-vercel-boilerplate/assets/15834299/b64bdc08-94d6-40ff-9713-a1349e15a843">
-
 
 ## Useful Resources:
 

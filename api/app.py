@@ -1,5 +1,5 @@
 from fastapi import APIRouter, Body, HTTPException
-from api.model import BookSchema
+from .model import BookSchema
 
 router = APIRouter()
 

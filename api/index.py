@@ -1,9 +1,7 @@
 from fastapi import FastAPI, Request
 from fastapi.templating import Jinja2Templates
-from .app import router as BookRouter
-from .static import router as StaticRouter
 from fastapi.staticfiles import StaticFiles
-from fastapi.responses import FileResponse
+from . import BookRouter, StaticRouter, generate_plugin_info_file
 
 app = FastAPI(
     title="Bookstore API", description="ChatGPT Plugin API docs", version="0.0.1"
@@ -32,4 +30,4 @@ app.mount("/static", StaticFiles(directory="static"), name="static")
 
 @app.get("/.well-known/ai-plugin.json", include_in_schema=False)
 async def serve_plugin_info():
-    return FileResponse("static/ai-plugin.json")
+    return generate_plugin_info_file()

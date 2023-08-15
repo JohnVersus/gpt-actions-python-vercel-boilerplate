@@ -6,8 +6,7 @@ from fastapi.staticfiles import StaticFiles
 from starlette.middleware.base import BaseHTTPMiddleware, RequestResponseEndpoint
 from starlette.responses import Response
 from urllib.parse import unquote, urlparse
-
-# from .database import Session, APIRequest  # Importing the database session and model
+from .database import Session, APIRequest  # Importing the database session and model
 from . import BookRouter, StaticRouter, generate_plugin_info_file
 import os
 from dotenv import load_dotenv

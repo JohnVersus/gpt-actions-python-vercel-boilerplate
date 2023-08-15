@@ -1,3 +1,8 @@
 fastapi
 uvicorn
 jinja2
+sqlalchemy 
+databases
+psycopg2-binary
+cachetools
+python-dotenv

@@ -26,14 +26,14 @@ class APIRequest(Base):
     __tablename__ = "PluginApiRequests"
 
     id = Column(Integer, primary_key=True, index=True, autoincrement=True)
+    query_parameters = Column(Text)
+    response_status = Column(Integer)
+    subdivision_code = Column(String)
     host = Column(String)
     real_ip = Column(String)
     user_id = Column(String)
     conversation_id = Column(String)
-    subdivision_code = Column(String)
     endpoint = Column(String)
-    query_parameters = Column(Text)
-    response_status = Column(Integer)
     timestamp = Column(DateTime, default=datetime.utcnow)
 
 

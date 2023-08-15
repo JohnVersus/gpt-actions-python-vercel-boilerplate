@@ -3,7 +3,7 @@ uvicorn
 jinja2
 sqlalchemy 
 databases
-psycopg2-binary
+# psycopg2-binary
 pymysql
 cachetools
 python-dotenv

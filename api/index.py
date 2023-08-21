@@ -107,7 +107,6 @@ app.include_router(BookRouter, prefix="/book", dependencies=[Depends(verify_toke
 app.include_router(
     StaticRouter,
     prefix="/static",
-    dependencies=[Depends(verify_token)],
     include_in_schema=False,
 )
 app.mount("/static", StaticFiles(directory="static"), name="static")

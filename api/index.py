@@ -80,7 +80,10 @@ class DBLoggerMiddleware(BaseHTTPMiddleware):
 
 
 app = FastAPI(
-    title="Bookstore API", description="ChatGPT Plugin API docs", version="0.0.1"
+    title="Bookstore API",
+    description="ChatGPT Plugin API docs",
+    version="0.0.1",
+    servers=[{"url": "http://0.0.0.0:8000/"}],
 )
 
 # uncomment to save on db

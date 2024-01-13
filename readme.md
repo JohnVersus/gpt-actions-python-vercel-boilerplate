@@ -73,3 +73,8 @@ Once the API is working as expected you can publish your GPT
 Bookstore GPT URL: https://chat.openai.com/g/g-zDbUeWbMJ-bookstore
 
 <img width="615" alt="image" src="https://github.com/JohnVersus/gpt-actions-python-vercel-boilerplate/assets/15834299/49882a7c-bfa5-4457-be0d-1bc7b4540ed2">
+
+## GPTs built using this repository
+
+<img width="573" alt="image" src="https://github.com/JohnVersus/gpt-actions-python-vercel-boilerplate/assets/15834299/b01aaac3-b631-4552-bfd4-b2728cb78126">
+

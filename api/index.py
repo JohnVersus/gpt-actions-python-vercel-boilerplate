@@ -14,6 +14,10 @@ from dotenv import load_dotenv
 load_dotenv()
 API_KEY = os.getenv("API_KEY")  # Retrieving the token from environment variables
 security = HTTPBearer()  # Bearer token-based security
+SERVEL_URL = os.getenv("VERCEL_URL", "http://0.0.0.0:8000/")
+# Ensure the URL starts with http:// or https://
+if SERVEL_URL and not SERVEL_URL.startswith("http"):
+    server_url = "https://" + SERVEL_URL
 
 
 # Token verification function
@@ -83,7 +87,7 @@ app = FastAPI(
     title="Bookstore API",
     description="ChatGPT Plugin API docs",
     version="0.0.1",
-    servers=[{"url": "http://0.0.0.0:8000/"}],
+    servers=[{"url": SERVEL_URL}],
 )
 
 # uncomment to save on db

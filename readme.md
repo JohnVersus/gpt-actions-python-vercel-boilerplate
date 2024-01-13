@@ -32,7 +32,9 @@ source venv/bin/activate
 pip install -r requirements.txt
 ```
 
-3. Start the FastAPI server:
+3. Add the required env variables in .env file.
+
+4. Start the FastAPI server:
 
 ```bash
 python3 main.py
@@ -68,4 +70,6 @@ Once the API is working as expected you can publish your GPT
 
 ## Working Demo
 
-<img width="700" alt="image" src="https://github.com/JohnVersus/chatgpt-plugin-python-vercel-boilerplate/assets/15834299/7a2e43f8-0c98-409f-99a0-24491756a0fc">
+Bookstore GPT URL: https://chat.openai.com/g/g-zDbUeWbMJ-bookstore
+
+<img width="615" alt="image" src="https://github.com/JohnVersus/gpt-actions-python-vercel-boilerplate/assets/15834299/49882a7c-bfa5-4457-be0d-1bc7b4540ed2">

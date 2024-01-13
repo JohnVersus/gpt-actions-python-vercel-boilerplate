@@ -43,7 +43,7 @@ class DBLoggerMiddleware(BaseHTTPMiddleware):
     async def dispatch(self, request: Request, call_next: RequestResponseEndpoint):
         request.state.db = Session()
         db_error = False
-        response_status = 200  # Default to 200 OK
+        response_status = 200  # Default to 200 OK in case of db error
 
         try:
             response = await call_next(request)  # Call the actual API endpoint
@@ -87,8 +87,8 @@ app = FastAPI(
     servers=[{"url": SERVEL_URL}],
 )
 
-# uncomment to save API requests on db
-# app.add_middleware(DBLoggerMiddleware)  # Add the middleware
+# comment if you dont want to use database
+app.add_middleware(DBLoggerMiddleware)
 
 templates = Jinja2Templates(directory="templates")
 

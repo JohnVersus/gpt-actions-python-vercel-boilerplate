@@ -1,3 +1,4 @@
+# This is an exaple API. Replace with your custom API code
 from fastapi import APIRouter, Body, HTTPException
 from .model import BookSchema
 

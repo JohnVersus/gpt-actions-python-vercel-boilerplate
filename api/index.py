@@ -7,17 +7,14 @@ from starlette.middleware.base import BaseHTTPMiddleware, RequestResponseEndpoin
 from starlette.responses import Response
 from urllib.parse import unquote, urlparse
 from .database import Session, APIRequest  # Importing the database session and model
-from . import BookRouter, StaticRouter, generate_plugin_info_file
+from . import BookRouter, StaticRouter
 import os
 from dotenv import load_dotenv
 
 load_dotenv()
 API_KEY = os.getenv("API_KEY")  # Retrieving the token from environment variables
 security = HTTPBearer()  # Bearer token-based security
-SERVEL_URL = os.getenv("VERCEL_URL", "http://0.0.0.0:8000/")
-# Ensure the URL starts with http:// or https://
-if SERVEL_URL and not SERVEL_URL.startswith("http"):
-    server_url = "https://" + SERVEL_URL
+SERVEL_URL = os.getenv("SERVER_URL", "http://0.0.0.0:8000/")
 
 
 # Token verification function
@@ -85,12 +82,12 @@ class DBLoggerMiddleware(BaseHTTPMiddleware):
 
 app = FastAPI(
     title="Bookstore API",
-    description="ChatGPT Plugin API docs",
+    description="Custome GPT actions API docs",
     version="0.0.1",
     servers=[{"url": SERVEL_URL}],
 )
 
-# uncomment to save on db
+# uncomment to save API requests on db
 # app.add_middleware(DBLoggerMiddleware)  # Add the middleware
 
 templates = Jinja2Templates(directory="templates")
@@ -102,9 +99,9 @@ async def read_root(request: Request):
         "index.html",
         {
             "request": request,
-            "title": "Chat GPT Plugin API",
-            "description": "ChatGPT Plugin API built using FastAPI and for hosting on vercel.",
-            "message": "ChatGPT Plugin API build using FastAPI and hosted on vercel.",
+            "title": "Custome GPT actions API",
+            "description": "Custome GPT actions API built using FastAPI and for hosting on vercel.",
+            "message": "Custome GPT actions API build using FastAPI and hosted on vercel.",
         },
     )
 
@@ -117,8 +114,3 @@ app.include_router(
     include_in_schema=False,
 )
 app.mount("/static", StaticFiles(directory="static"), name="static")
-
-
-@app.get("/.well-known/ai-plugin.json", include_in_schema=False)
-async def serve_plugin_info():
-    return generate_plugin_info_file()

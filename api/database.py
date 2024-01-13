@@ -44,7 +44,7 @@ class APIRequest(Base):
 Base.metadata.create_all(bind=engine)
 
 
-# postgres code for ref
+# postgres code for ref. Uncomment if you want to use postgres
 """
 from sqlalchemy import Column, String, Integer, DateTime, Text, create_engine
 from sqlalchemy.orm import sessionmaker

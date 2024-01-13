@@ -1,4 +1,4 @@
-from typing import Optional
+from typing import Optional, Dict
 from pydantic import BaseModel
 
 
@@ -17,3 +17,15 @@ class BookSchema(BaseModel):
                 "publication_year": 2013,
             }
         }
+
+
+class BookResponse(BaseModel):
+    data: Dict[str, BookSchema]
+
+
+class MessageResponse(BaseModel):
+    message: str
+
+
+class ErrorResponse(BaseModel):
+    error: str

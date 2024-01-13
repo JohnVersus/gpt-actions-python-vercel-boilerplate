@@ -5,5 +5,4 @@ sqlalchemy
 databases
 # psycopg2-binary
 pymysql
-cachetools
 python-dotenv

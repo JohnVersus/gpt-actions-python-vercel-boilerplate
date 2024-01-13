@@ -101,7 +101,7 @@ async def read_root(request: Request):
             "request": request,
             "title": "Custome GPT actions API",
             "description": "Custome GPT actions API built using FastAPI and for hosting on vercel.",
-            "message": "Custome GPT actions API build using FastAPI and hosted on vercel.",
+            "message": "Custome GPT actions API built using FastAPI and hosted on vercel.",
         },
     )
 
